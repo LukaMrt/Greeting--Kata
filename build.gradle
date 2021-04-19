@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group 'fr.lukam'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+test.finalizedBy jacocoTestReport
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: 'fr/lukam/greeting/Main.class')
+        }))
+    }
+}
+
+dependencies {
+    testImplementation group: 'org.apache.maven.plugins', name: 'maven-surefire-plugin', version: '2.22.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.1'
+    testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.7.1"'
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.9.0'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
+    testImplementation group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.6'
+}
+
+test {
+    useJUnitPlatform()
+}
