@@ -4,7 +4,7 @@ This my implementation of the Greeting kata : https://github.com/testdouble/cont
 
 ## Rules
 
-Here are the rules og this kata
+Here are the rules of this kata
 
 ## Requirement 1
 
