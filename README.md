@@ -1,4 +1,4 @@
-# Greeting-Kata
+# Greeting kata
 
 This my implementation of the Greeting kata : https://github.com/testdouble/contributing-tests/wiki/Greeting-Kata
 
